@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/header.ejs') %>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 10px;
+            background-color: 	#dfe3ee;
+            color: #3b5998;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .footer{
+            margin-bottom:0;
+            font-size: 1.2rem;
+        }
+        input{
+            background: transparent;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-bottom: 1px 	#999999 solid;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        input:focus{
+            outline: none;
+            border-bottom: 2px #555555 solid;
+        }
+        ul {
+            margin-top: 20px;
+        }
+        ul li{
+            list-style-type: none;
+            text-transform: uppercase;
+        }
+        button{
+            background: none;
+            font-size: 14px;
+            padding: 5px;
+            outline: none;
+            border: none;
+            background-color: cornflowerblue;
+        }
+        .form-align{
+            display: flex;
+            justify-content: center;
+            background-color: cadetblue;
+            padding: 8px;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+
+   
+    <form action="" method="post">
+        <div class="form-align">
+            <input type="text" placeholder="programming languages" autocomplete="off" name="pLanguages">
+        <button type="submit">submit</button>
+        </div>
+        
+
+    </form>
+    <ul>
+        <% if(pLang.length> 0){ %>
+            <% pLang.forEach( function( items ) { %>
+                <li>
+                    <%= items %>
+                </li>
+
+
+                <% }); %>
+
+
+                    <% }else{ %>
+                        <h4>Enter a value</h4>
+                        <% } %>
+    </ul>
+</div>
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>
